@@ -1,26 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Edwin - Professional Web & Graphic Designer creating modern websites and bold brand visuals">
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Edwin | Web & Graphic Designer</title>
-</head>
-
-  <!-- Put marquee in the body, not inside head -->
-  <marquee style="color: blue; font-weight: bold;">
-    Welcome to Explore our services — Web & Graphic Designer
-  </marquee>
-</body>
-
+    <title>Edwin | Web & Graphic Designer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-     /* CSS Reset & Base Styles */
+        /* CSS Reset & Base Styles */
         :root {
             --primary: #4361ee;
             --secondary: #3f37c9;
@@ -42,7 +29,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background-color: var(--light);
         }
         
         a {
@@ -243,10 +229,11 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(63, 55, 201, 0.1) 50%, rgba(72, 149, 239, 0.1) 100%), 
-                        url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.7) 0%, rgba(63, 55, 201, 0.7) 50%, rgba(72, 149, 239, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             position: relative;
             overflow: hidden;
+            color: white;
         }
         
         #home::before {
@@ -256,7 +243,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.3);
             z-index: 0;
         }
         
@@ -264,17 +251,19 @@
             max-width: 800px;
             position: relative;
             z-index: 1;
+            color: white;
         }
         
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            color: var(--dark);
+            color: white;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero-content h1 span {
-            background: var(--gradient);
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -283,7 +272,7 @@
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .hero-btns {
@@ -303,19 +292,20 @@
             font-weight: 600;
             padding: 8px 15px;
             border-radius: 30px;
-            background-color: rgba(67, 97, 238, 0.1);
+            background-color: rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            color: white;
         }
         
         .quick-links a:hover {
-            background-color: rgba(67, 97, 238, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
         }
         
         .quick-links i {
             margin-right: 8px;
             font-size: 1.2rem;
-            color: var(--primary);
+            color: white;
         }
         
         /* Floating Shapes Animation */
@@ -331,13 +321,13 @@
         
         .shape {
             position: absolute;
-            opacity: 0.1;
+            opacity: 0.3;
             animation: float 15s infinite linear;
         }
         
         .shape.circle {
             border-radius: 50%;
-            background: var(--primary);
+            background: white;
         }
         
         .shape.triangle {
@@ -345,12 +335,12 @@
             height: 0;
             border-left: 25px solid transparent;
             border-right: 25px solid transparent;
-            border-bottom: 50px solid var(--accent);
+            border-bottom: 50px solid white;
             background: transparent;
         }
         
         .shape.square {
-            background: var(--secondary);
+            background: white;
         }
         
         @keyframes float {
@@ -364,9 +354,10 @@
         
         /* About Section */
         #about {
-            background-color: white;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             position: relative;
             overflow: hidden;
+            color: #333;
         }
         
         .about-content {
@@ -384,6 +375,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.5s ease;
             position: relative;
+            border: 5px solid white;
         }
         
         .about-img:hover {
@@ -442,7 +434,7 @@
         }
         
         .tool {
-            background-color: var(--light);
+            background-color: white;
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -465,9 +457,10 @@
         
         /* Services Section */
         #services {
-            background-color: var(--light);
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
             position: relative;
             overflow: hidden;
+            color: #333;
         }
         
         .services-grid {
@@ -482,11 +475,12 @@
             background-color: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         .service-card::before {
@@ -504,7 +498,7 @@
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .service-card:hover::before {
@@ -561,9 +555,10 @@
         
         /* Portfolio Section */
         #portfolio {
-            background-color: white;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 50%, #ffcdd2 100%);
             position: relative;
             overflow: hidden;
+            color: #333;
         }
         
         .portfolio-filter {
@@ -608,7 +603,7 @@
         
         .portfolio-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .portfolio-img {
@@ -695,9 +690,10 @@
         
         /* Testimonials Section */
         #testimonials {
-            background-color: var(--light);
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #ce93d8 100%);
             position: relative;
             overflow: hidden;
+            color: #333;
         }
         
         .testimonials-container {
@@ -711,7 +707,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             position: relative;
             transition: all 0.3s ease;
@@ -719,7 +715,7 @@
         
         .testimonial:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
         .testimonial::before {
@@ -782,9 +778,10 @@
         
         /* Contact Section */
         #contact {
-            background-color: white;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
             position: relative;
             overflow: hidden;
+            color: #333;
         }
         
         .contact-container {
@@ -945,7 +942,7 @@
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
             padding: 50px 0 20px;
             text-align: center;
@@ -1053,7 +1050,7 @@
         
         .particle {
             position: absolute;
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             animation: float-particle 15s infinite linear;
         }
@@ -1073,6 +1070,48 @@
                 transform: translateY(-1000px) rotate(720deg);
                 opacity: 0;
             }
+        }
+        
+        /* Marquee Styles */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(270deg, #007bff, #00ff88, #ff0099);
+            background-size: 600% 600%;
+            animation: bgShift 8s ease infinite;
+            padding: 10px 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollText 10s linear infinite;
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: scrollText 10s linear infinite, textColorShift 6s ease infinite;
+        }
+
+        @keyframes scrollText {
+            0%   { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textColorShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         /* Responsive Styles */
@@ -1175,8 +1214,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                   
-               
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -1197,69 +1234,18 @@
         </div>
         <div class="container">
             <div class="hero-content">
-               
-             <section id="hero">
-    <div class="hero-content">
-        <div class="marquee-container">
-            <div class="marquee">
-                Hello, We're Web & Graphic Designers — Bringing Ideas to Life!
-            </div>
-        </div>
-        <p>We create stunning websites and designs to grow your business.</p>
-    </div>
-</section>
-
-<style>
-    /* Container for marquee */
-    .marquee-container {
-        width: 100%;
-        overflow: hidden;
-        background: linear-gradient(270deg, #007bff, #00ff88, #ff0099);
-        background-size: 600% 600%;
-        animation: bgShift 8s ease infinite;
-        padding: 10px 0;
-        border-radius: 8px;
-    }
-
-    /* The marquee text */
-    .marquee {
-        display: inline-block;
-        white-space: nowrap;
-        animation: scrollText 10s linear infinite;
-        font-size: 2rem;
-        font-weight: bold;
-        background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
-        background-size: 600% 600%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: scrollText 10s linear infinite, textColorShift 6s ease infinite;
-    }
-
-    /* Animation for scrolling */
-    @keyframes scrollText {
-        0%   { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-
-    /* Animated background color change */
-    @keyframes bgShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    /* Animated text color gradient shift */
-    @keyframes textColorShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-</style>
-
+                <div class="marquee-container">
+                    <div class="marquee">
+                        Hello, We're Web & Graphic Designers — Bringing Ideas to Life!
+                    </div>
+                </div>
+                <h1>We Create <span>Beautiful</span> Digital Experiences</h1>
+                <p>Professional web design and graphic design services to help your business stand out online.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn"><i class="fas fa-briefcase"></i> Our Services</a>
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
                 </div>
                 <div class="quick-links">
-                  
                     <a href="#contact"><i class="fas fa-envelope"></i> Email Us</a>
                     <a href="https://wa.me/254741278248"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
                 </div>
@@ -1273,7 +1259,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Us</h2>
-                <p>Get to know more about Our skills</p>
+                <p>Get to know more about our skills and expertise</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
@@ -1284,76 +1270,16 @@
                     <p>We are freelance web and graphic designer passionate about helping businesses and brands stand out. We design clean websites, creative logos, and engaging visual content that works across all devices.</p>
                     <p>With years of experience in the industry, We've helped numerous clients establish their online presence and create compelling visual identities that resonate with their target audience.</p>
                     <div class="skills">
-                       <h4>Tools We Use:</h4>
-<div class="tools">
-    <span class="tool html"><i class="fab fa-html5"></i> HTML5</span>
-    <span class="tool css"><i class="fab fa-css3-alt"></i> CSS3</span>
-    <span class="tool js"><i class="fab fa-js"></i> JavaScript</span>
-    <span class="tool wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-    <span class="tool figma"><i class="fab fa-figma"></i> Figma</span>
-    <span class="tool photoshop"><i class="fas fa-paint-brush"></i> Photoshop</span>
-    <span class="tool illustrator"><i class="fas fa-pen-fancy"></i> Illustrator</span>
-    <span class="tool canva"><i class="fas fa-mobile-alt"></i> Canva</span>
-</div>
-
-<style>
-.tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tool {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: white;
-    background: gray;
-}
-
-.tool i {
-    font-size: 1.2rem;
-}
-
-/* Individual tool brand colors */
-.tool.html {
-    background-color: #e44d26;
-}
-
-.tool.css {
-    background-color: #264de4;
-}
-
-.tool.js {
-    background-color: #f7df1e;
-    color: #000; /* JS brand text is black */
-}
-
-.tool.wordpress {
-    background-color: #21759b;
-}
-
-.tool.figma {
-    background-color: #a259ff;
-}
-
-.tool.photoshop {
-    background-color: #31a8ff;
-}
-
-.tool.illustrator {
-    background-color: #ff9a00;
-}
-
-.tool.canva {
-    background-color: #00c4cc;
-}
-</style>
-
+                        <h4>Tools We Use:</h4>
+                        <div class="tools">
+                            <span class="tool html"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="tool css"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="tool js"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="tool wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+                            <span class="tool figma"><i class="fab fa-figma"></i> Figma</span>
+                            <span class="tool photoshop"><i class="fas fa-paint-brush"></i> Photoshop</span>
+                            <span class="tool illustrator"><i class="fas fa-pen-fancy"></i> Illustrator</span>
+                            <span class="tool canva"><i class="fas fa-mobile-alt"></i> Canva</span>
                         </div>
                     </div>
                 </div>
@@ -1361,124 +1287,59 @@
         </div>
     </section>
 
-  <!-- Services Section -->
-<section id="services" class="services-section">
-    <div class="particles" id="services-particles"></div>
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Here are the services we offer to help grow your business</p>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="particles" id="services-particles"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Here are the services we offer to help grow your business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card web-dev">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Website design</li>
+                        <li>Landing pages</li>
+                        <li>Maintenance</li>
+                        <li>E-commerce solutions</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+                <div class="service-card graphic-design">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <ul>
+                        <li>Logo design</li>
+                        <li>Posters</li>
+                        <li>Business cards</li>
+                        <li>Brochures</li>
+                        <li>Infographics</li>
+                        <li>Banners</li>
+                    </ul>
+                </div>
+                <div class="service-card branding">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Branding</h3>
+                    <ul>
+                        <li>Brand kits</li>
+                        <li>Social media banners</li>
+                        <li>Flyers & Ads</li>
+                        <li>Brand guidelines</li>
+                        <li>Visual identity</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="services-grid">
-            <div class="service-card web-dev">
-                <div class="service-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3>Web Development</h3>
-                <ul>
-                    <li>Website design</li>
-                    <li>Landing pages</li>
-                    <li>Maintenance</li>
-                    <li>E-commerce solutions</li>
-                    <li>Responsive design</li>
-                </ul>
-            </div>
-            <div class="service-card graphic-design">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>Graphic Design</h3>
-                <ul>
-                    <li>Logo design</li>
-                    <li>Posters</li>
-                    <li>Business cards</li>
-                    <li>Brochures</li>
-                    <li>Infographics</li>
-                    <li>Banners</li>
-                </ul>
-            </div>
-            <div class="service-card branding">
-                <div class="service-icon">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <h3>Branding</h3>
-                <ul>
-                    <li>Brand kits</li>
-                    <li>Social media banners</li>
-                    <li>Flyers & Ads</li>
-                    <li>Brand guidelines</li>
-                    <li>Visual identity</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<style>
-/* Whole section background */
-.services-section {
-    background-color: #f0f8ff; /* Light blue */
-    padding: 60px 0;
-}
-
-/* Service grid layout */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* Service cards with background images */
-.service-card {
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Dark overlay for readability */
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-}
-
-.service-card * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Service icons */
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-/* Images for each service */
-.web-dev {
-    background-image: url('images/web-development.jpg');
-}
-
-.graphic-design {
-    background-image: url('images/graphic-design.jpg');
-}
-
-.branding {
-    background-image: url('images/branding.jpg');
-}
-</style>
-
- 
     <!-- Contact Section -->
     <section id="contact">
         <div class="particles" id="contact-particles"></div>
@@ -1490,7 +1351,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>Feel free to reach out to Us for any questions or project inquiries. We'll get back to you as soon as possible.</p>
+                    <p>Feel free to reach out to us for any questions or project inquiries. We'll get back to you as soon as possible.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -1537,7 +1398,31 @@
                     </a>
                 </div>
                 
-              
+                <div class="contact-form">
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1548,8 +1433,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-           
-                  
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <p class="copyright">&copy; 2023 Edwin. All Rights Reserved</p>
@@ -1666,7 +1549,7 @@
             
             // Here you would typically send the form data to a server
             // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
             
             // Reset form
             form.reset();
@@ -1705,20 +1588,7 @@
         // Create particles for each section
         createParticles('about-particles', 15);
         createParticles('services-particles', 15);
-        createParticles('portfolio-particles', 15);
-        createParticles('testimonials-particles', 15);
         createParticles('contact-particles', 15);
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

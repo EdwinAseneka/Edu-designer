@@ -1261,51 +1261,55 @@
                 <h2>About Us</h2>
                 <p>Get to know more about our skills and expertise</p>
             </div>
-            /* Color-animated image */
+          /* Animated Image Styles */
 .about-img {
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
 }
 
-.color-animate {
+.animated-img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
-    animation: colorPulse 8s infinite alternate;
-    transition: transform 0.5s ease;
+    transition: all 0.5s ease;
+    animation: colorWave 12s infinite alternate;
+    transform-origin: center;
 }
 
-@keyframes colorPulse {
+@keyframes colorWave {
     0% {
-        filter: sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%);
+        filter: sepia(10%) hue-rotate(0deg) saturate(110%) brightness(100%);
     }
     25% {
-        filter: sepia(20%) saturate(120%) hue-rotate(10deg) brightness(110%);
+        filter: sepia(15%) hue-rotate(15deg) saturate(115%) brightness(105%);
     }
     50% {
-        filter: sepia(30%) saturate(140%) hue-rotate(20deg) brightness(105%);
+        filter: sepia(5%) hue-rotate(-10deg) saturate(120%) brightness(103%);
     }
     75% {
-        filter: sepia(10%) saturate(150%) hue-rotate(-15deg) brightness(110%);
+        filter: sepia(12%) hue-rotate(5deg) saturate(125%) brightness(107%);
     }
     100% {
-        filter: sepia(0%) saturate(130%) hue-rotate(-5deg) brightness(105%);
+        filter: sepia(8%) hue-rotate(-5deg) saturate(130%) brightness(110%);
     }
 }
 
-.about-img:hover .color-animate {
+.about-img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-img:hover .animated-img {
     transform: scale(1.05);
-    animation-duration: 4s;
-    filter: sepia(0%) saturate(150%) hue-rotate(0deg) brightness(110%);
+    animation: colorWave 6s infinite alternate;
 }
 <div class="about-content">
     <div class="about-img">
         <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer" class="color-animate">
     </div>
-</div>
-                </div>
                 <div class="about-text">
                     <h3>Freelance Web & Graphic Designer</h3>
                     <p>We are freelance web and graphic designer passionate about helping businesses and brands stand out. We design clean websites, creative logos, and engaging visual content that works across all devices.</p>
@@ -1633,4 +1637,5 @@
     </script>
 </body>
 </html>
+
 

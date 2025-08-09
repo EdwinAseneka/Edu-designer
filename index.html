@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Edwin - Professional Web & Graphic Designer creating modern websites and bold brand visuals">
-    <title>Edwin | Web & Graphic Designer</title>
+ <title>Edwin | Web & Graphic Designer</title>
+<marquee style="color: blue; font-weight: bold;">
+    Welcome to Explore our services — Web & Graphic Designer
+</marquee>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* CSS Reset & Base Styles */
@@ -1234,58 +1237,122 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="particles" id="services-particles"></div>
-        <div class="container">
-            <div class="section-title">
-                <h2>our Services</h2>
-                <p>Here are the services We offer to help grow your business</p>
+  <!-- Services Section -->
+<section id="services" class="services-section">
+    <div class="particles" id="services-particles"></div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Here are the services we offer to help grow your business</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card web-dev">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <ul>
+                    <li>Website design</li>
+                    <li>Landing pages</li>
+                    <li>Maintenance</li>
+                    <li>E-commerce solutions</li>
+                    <li>Responsive design</li>
+                </ul>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>Website design</li>
-                        <li>Landing pages</li>
-                        <li>Maintenance</li>
-                        <li>E-commerce solutions</li>
-                        <li>Responsive design</li>
-                    </ul>
+            <div class="service-card graphic-design">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Graphic Design</h3>
-                    <ul>
-                        <li>Logo design</li>
-                        <li>Posters</li>
-                        <li>Business cards</li>
-                        <li>Brochures</li>
-                        <li>Infographics</li>
-                        <li>banners</li>
-                    </ul>
+                <h3>Graphic Design</h3>
+                <ul>
+                    <li>Logo design</li>
+                    <li>Posters</li>
+                    <li>Business cards</li>
+                    <li>Brochures</li>
+                    <li>Infographics</li>
+                    <li>Banners</li>
+                </ul>
+            </div>
+            <div class="service-card branding">
+                <div class="service-icon">
+                    <i class="fas fa-bullhorn"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Branding</h3>
-                    <ul>
-                        <li>Brand kits</li>
-                        <li>Social media banners</li>
-                        <li>Flyers & Ads</li>
-                        <li>Brand guidelines</li>
-                        <li>Visual identity</li>
-                    </ul>
-                </div>
+                <h3>Branding</h3>
+                <ul>
+                    <li>Brand kits</li>
+                    <li>Social media banners</li>
+                    <li>Flyers & Ads</li>
+                    <li>Brand guidelines</li>
+                    <li>Visual identity</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Whole section background */
+.services-section {
+    background-color: #f0f8ff; /* Light blue */
+    padding: 60px 0;
+}
+
+/* Service grid layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Service cards with background images */
+.service-card {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Dark overlay for readability */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.service-card * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Service icons */
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Images for each service */
+.web-dev {
+    background-image: url('images/web-development.jpg');
+}
+
+.graphic-design {
+    background-image: url('images/graphic-design.jpg');
+}
+
+.branding {
+    background-image: url('images/branding.jpg');
+}
+</style>
 
  
     <!-- Contact Section -->
@@ -1520,6 +1587,7 @@
     </script>
 </body>
 </html>
+
 
 
 

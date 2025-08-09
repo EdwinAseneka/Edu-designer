@@ -1201,7 +1201,51 @@
                 padding: 6px 15px;
                 font-size: 0.9rem;
             }
-        }
+        } /* Animated Image Styles */
+.about-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.animated-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease;
+    animation: colorWave 12s infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes colorWave {
+    0% {
+        filter: sepia(10%) hue-rotate(0deg) saturate(110%) brightness(100%);
+    }
+    25% {
+        filter: sepia(15%) hue-rotate(15deg) saturate(115%) brightness(105%);
+    }
+    50% {
+        filter: sepia(5%) hue-rotate(-10deg) saturate(120%) brightness(103%);
+    }
+    75% {
+        filter: sepia(12%) hue-rotate(5deg) saturate(125%) brightness(107%);
+    }
+    100% {
+        filter: sepia(8%) hue-rotate(-5deg) saturate(130%) brightness(110%);
+    }
+}
+
+.about-img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-img:hover .animated-img {
+    transform: scale(1.05);
+    animation: colorWave 6s infinite alternate;
+}
     </style>
 </head>
 <body>
@@ -1261,57 +1305,12 @@
                 <h2>About Us</h2>
                 <p>Get to know more about our skills and expertise</p>
             </div>
-          /* Animated Image Styles */
-.about-img {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-}
-
-.animated-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: all 0.5s ease;
-    animation: colorWave 12s infinite alternate;
-    transform-origin: center;
-}
-
-@keyframes colorWave {
-    0% {
-        filter: sepia(10%) hue-rotate(0deg) saturate(110%) brightness(100%);
-    }
-    25% {
-        filter: sepia(15%) hue-rotate(15deg) saturate(115%) brightness(105%);
-    }
-    50% {
-        filter: sepia(5%) hue-rotate(-10deg) saturate(120%) brightness(103%);
-    }
-    75% {
-        filter: sepia(12%) hue-rotate(5deg) saturate(125%) brightness(107%);
-    }
-    100% {
-        filter: sepia(8%) hue-rotate(-5deg) saturate(130%) brightness(110%);
-    }
-}
-
-.about-img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.about-img:hover .animated-img {
-    transform: scale(1.05);
-    animation: colorWave 6s infinite alternate;
-}
+         
 <div class="about-content">
     <div class="about-img">
         <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer" class="color-animate">
     </div>
-</style>
-                <div class="about-text">
+     <div class="about-text">
                     <h3>Freelance Web & Graphic Designer</h3>
                     <p>We are freelance web and graphic designer passionate about helping businesses and brands stand out. We design clean websites, creative logos, and engaging visual content that works across all devices.</p>
                     <p>With years of experience in the industry, We've helped numerous clients establish their online presence and create compelling visual identities that resonate with their target audience.</p>
@@ -1638,6 +1637,7 @@
     </script>
 </body>
 </html>
+
 
 
 

@@ -1197,10 +1197,65 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Hello,  We're<br> Web & Graphic Designers</h1>
-                <p>We build modern websites  <a and bold brand visuals that help businesses stand out and connect with their audience.</p>
-                <div class="hero-btns">
-                  
+               
+             <section id="hero">
+    <div class="hero-content">
+        <div class="marquee-container">
+            <div class="marquee">
+                Hello, We're Web & Graphic Designers — Bringing Ideas to Life!
+            </div>
+        </div>
+        <p>We create stunning websites and designs to grow your business.</p>
+    </div>
+</section>
+
+<style>
+    /* Container for marquee */
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(270deg, #007bff, #00ff88, #ff0099);
+        background-size: 600% 600%;
+        animation: bgShift 8s ease infinite;
+        padding: 10px 0;
+        border-radius: 8px;
+    }
+
+    /* The marquee text */
+    .marquee {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scrollText 10s linear infinite;
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: scrollText 10s linear infinite, textColorShift 6s ease infinite;
+    }
+
+    /* Animation for scrolling */
+    @keyframes scrollText {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* Animated background color change */
+    @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Animated text color gradient shift */
+    @keyframes textColorShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
                 </div>
                 <div class="quick-links">
@@ -1656,6 +1711,7 @@
     </script>
 </body>
 </html>
+
 
 
 

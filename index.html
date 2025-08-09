@@ -1247,7 +1247,9 @@
                 </div>
                 <div class="quick-links">
                     <a href="#contact"><i class="fas fa-envelope"></i> Email Us</a>
-                    <a href="https://wa.me/254741278248"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                                  <a href="https://wa.me/254741278248?text=Hello%20I%20am%20interested%20in%20your%20services" target="_blank" style="background:#25D366; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
+    💬 Chat on WhatsApp
+</a>
                 </div>
             </div>
         </div>
@@ -1272,34 +1274,30 @@
     const photo = document.getElementById('animated-photo');
     let counter = 0;
     
-    // More vibrant color effects
+    // Professional subtle color effects
     const effects = [
-        { filter: 'hue-rotate(0deg) saturate(2) brightness(1.2)' },
-        { filter: 'hue-rotate(90deg) saturate(2.5) contrast(1.3)' },
-        { filter: 'hue-rotate(180deg) saturate(3) brightness(1.3)' },
-        { filter: 'hue-rotate(270deg) saturate(2.8) contrast(1.4)' },
-        { filter: 'hue-rotate(45deg) saturate(3.5) brightness(1.4)' },
-        { filter: 'hue-rotate(135deg) saturate(4) contrast(1.5)' },
-        { filter: 'hue-rotate(225deg) saturate(3.2) brightness(1.5)' },
-        { filter: 'hue-rotate(315deg) saturate(3.8) contrast(1.6)' }
+        { filter: 'sepia(0.1) hue-rotate(0deg) saturate(1.05) brightness(1.02)' },
+        { filter: 'sepia(0.08) hue-rotate(5deg) saturate(1.03)' },
+        { filter: 'sepia(0.05) hue-rotate(-5deg) brightness(1.01)' },
+        { filter: 'sepia(0.12) hue-rotate(3deg) saturate(1.02)' },
+        { filter: 'sepia(0.07) hue-rotate(-3deg) brightness(1.01)' }
     ];
     
     function cycleEffects() {
         counter = (counter + 1) % effects.length;
-        photo.style.transition = 'filter 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        photo.style.transition = 'filter 2.5s ease-in-out';
         photo.style.filter = effects[counter].filter;
         
-        // Random speed variation for more dynamic effect (1.2s to 1.8s)
-        const nextDelay = 1200 + Math.random() * 600;
-        setTimeout(cycleEffects, nextDelay);
+        // Consistent timing for professional appearance
+        setTimeout(cycleEffects, 5000);
     }
     
-    // Start with initial bright effect immediately
-    photo.style.filter = 'hue-rotate(0deg) saturate(2) brightness(1.2)';
+    // Start with no filter initially
+    photo.style.filter = 'none';
     
     // Start animation when image loads
     photo.onload = function() {
-        setTimeout(cycleEffects, 500); // Slight initial delay
+        setTimeout(cycleEffects, 1000); // Gentle initial delay
     };
     if (photo.complete) photo.onload();
 </script>
@@ -1400,11 +1398,21 @@
                     </div>
                     <h3>Web Development</h3>
                     <ul>
-                        <li>Website design</li>
-                        <li>Landing pages</li>
-                        <li>Maintenance</li>
-                        <li>E-commerce solutions</li>
-                        <li>Responsive design</li>
+                       <li>Website design & development</li>
+    <li>Landing pages (high-conversion)</li>
+    <li>Website maintenance & updates</li>
+    <li>E-commerce solutions (Shopify, WooCommerce, custom)</li>
+    <li>Responsive & mobile-first design</li>
+    <li>Custom web applications</li>
+    <li>CMS development (WordPress, Webflow, etc.)</li>
+    <li>SEO-friendly website coding</li>
+    <li>Website speed optimization</li>
+    <li>API integrations (payment, CRM, etc.)</li>
+    <li>Progressive Web Apps (PWAs)</li>
+    <li>Website security & SSL setup</li>
+    <li>Database design & management</li>
+    <li>UI/UX optimization</li>
+    <li>Website migrations & redesigns</li>
                     </ul>
                 </div>
                 <div class="service-card graphic-design">
@@ -1413,12 +1421,22 @@
                     </div>
                     <h3>Graphic Design</h3>
                     <ul>
-                        <li>Logo design</li>
-                        <li>Posters</li>
-                        <li>Business cards</li>
-                        <li>Brochures</li>
-                        <li>Infographics</li>
-                        <li>Banners</li>
+                       <li>Logo design</li>
+<li>Posters</li>
+<li>Business cards</li>
+<li>Brochures</li>
+<li>Infographics</li>
+<li>Banners</li>
+<li>Social media graphics</li>
+<li>Brand identity systems</li>
+<li>Packaging design</li>
+<li>Stationery design</li>
+<li>Presentation decks</li>
+<li>Billboard ads</li>
+<li>Signage design</li>
+<li>Book covers</li>
+<li>Trade show displays</li>
+<li>Illustrations & icons</li>
                     </ul>
                 </div>
                 <div class="service-card branding">
@@ -1496,25 +1514,160 @@
 </a>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="form">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+               <div class="contact-section">
+    <div class="contact-form">
+        <div class="contact-direct">
+            <p><i class="fas fa-phone-alt"></i> Call me directly: <a href="tel:0741278248">0741 278 248</a></p>
+            <p><i class="fas fa-envelope"></i> Or email: <a href="mailto:edwinaseneka6@gmail.com">edwinaseneka6@gmail.com</a></p>
+        </div>
+        
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* ====== CUSTOMIZABLE VARIABLES ====== */
+    :root {
+        --primary-color: #2563eb;  /* Change this to your brand color */
+        --hover-color: #1d4ed8;     /* Darker shade for hover states */
+        --text-color: #333;         /* Main text color */
+        --light-text: #555;         /* Secondary text color */
+        --border-color: #ddd;       /* Input border color */
+        --bg-color: #fff;           /* Background color */
+        --section-bg: #f8f9fa;      /* Contact info background */
+        --shadow: 0 2px 10px rgba(0,0,0,0.1); /* Box shadow */
+        --border-radius: 8px;       /* Roundness of corners */
+        --transition: all 0.3s ease; /* Animation speed */
+    }
+
+    /* ====== BASE STYLES ====== */
+    .contact-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background: var(--bg-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+    }
+
+    .contact-direct {
+        background: var(--section-bg);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        margin-bottom: 25px;
+        text-align: center;
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .contact-direct p {
+        margin: 10px 0;
+        color: var(--light-text);
+    }
+
+    .contact-direct a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .contact-direct a:hover {
+        color: var(--hover-color);
+        text-decoration: underline;
+    }
+
+    .contact-direct i {
+        margin-right: 8px;
+        color: var(--primary-color);
+    }
+
+    /* ====== FORM STYLES ====== */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: calc(var(--border-radius) - 2px);
+        font-size: 16px;
+        transition: var(--transition);
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    /* ====== BUTTON STYLES ====== */
+    .btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: calc(var(--border-radius) - 2px);
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn:hover {
+        background: var(--hover-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn i {
+        margin-right: 8px;
+    }
+
+    /* ====== RESPONSIVE ADJUSTMENTS ====== */
+    @media (max-width: 768px) {
+        .contact-section {
+            padding: 20px;
+        }
+        
+        .contact-direct {
+            padding: 15px;
+        }
+    }
+</style>
                     </form>
                 </div>
             </div>
@@ -1690,6 +1843,7 @@
     </script>
 </body>
 </html>
+
 
 
 

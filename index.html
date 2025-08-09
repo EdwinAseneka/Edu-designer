@@ -1270,37 +1270,68 @@
     </div>
 </div>
 
-<script>
-    const photo = document.getElementById('animated-photo');
-    let counter = 0;
-    
-    // Professional subtle color effects
-    const effects = [
-        { filter: 'sepia(0.1) hue-rotate(0deg) saturate(1.05) brightness(1.02)' },
-        { filter: 'sepia(0.08) hue-rotate(5deg) saturate(1.03)' },
-        { filter: 'sepia(0.05) hue-rotate(-5deg) brightness(1.01)' },
-        { filter: 'sepia(0.12) hue-rotate(3deg) saturate(1.02)' },
-        { filter: 'sepia(0.07) hue-rotate(-3deg) brightness(1.01)' }
-    ];
-    
-    function cycleEffects() {
-        counter = (counter + 1) % effects.length;
-        photo.style.transition = 'filter 2.5s ease-in-out';
-        photo.style.filter = effects[counter].filter;
-        
-        // Consistent timing for professional appearance
-        setTimeout(cycleEffects, 5000);
+<style>
+    .about-img {
+        position: relative;
+        width: fit-content;
+        border-radius: 12px;
+        overflow: hidden;
+        --border-width: 3px;
     }
     
-    // Start with no filter initially
-    photo.style.filter = 'none';
+    .about-img::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        border-radius: inherit;
+        padding: var(--border-width);
+        background: linear-gradient(135deg, 
+                    rgba(101, 117, 255, 0.8), 
+                    rgba(234, 101, 255, 0.6), 
+                    rgba(255, 178, 101, 0.4));
+        mask: linear-gradient(#fff 0 0) content-box, 
+              linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 0.4s ease;
+    }
     
-    // Start animation when image loads
-    photo.onload = function() {
-        setTimeout(cycleEffects, 1000); // Gentle initial delay
-    };
-    if (photo.complete) photo.onload();
-</script>
+    #animated-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: calc(12px - var(--border-width));
+        transform: scale(0.98);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        filter: brightness(0.98) contrast(1.02);
+    }
+    
+    .about-img:hover::before {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    
+    .about-img:hover #animated-photo {
+        transform: scale(1);
+        filter: brightness(1) contrast(1.05);
+    }
+    
+    /* Continuous subtle animation when not hovering */
+    @keyframes subtleBreath {
+        0%, 100% { transform: scale(0.99); }
+        50% { transform: scale(1); }
+    }
+    
+    #animated-photo {
+        animation: subtleBreath 8s infinite ease-in-out;
+    }
+    
+    .about-img:hover #animated-photo {
+        animation: none;
+    }
+</style>
      <div class="about-text">
                     <h3>Freelance Web & Graphic Designer</h3>
                     <p>We are freelance web and graphic designer passionate about helping businesses and brands stand out. We design clean websites, creative logos, and engaging visual content that works across all devices.</p>
@@ -1843,6 +1874,7 @@
     </script>
 </body>
 </html>
+
 
 
 

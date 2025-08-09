@@ -1261,9 +1261,50 @@
                 <h2>About Us</h2>
                 <p>Get to know more about our skills and expertise</p>
             </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer">
+            /* Color-animated image */
+.about-img {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.color-animate {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    animation: colorPulse 8s infinite alternate;
+    transition: transform 0.5s ease;
+}
+
+@keyframes colorPulse {
+    0% {
+        filter: sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%);
+    }
+    25% {
+        filter: sepia(20%) saturate(120%) hue-rotate(10deg) brightness(110%);
+    }
+    50% {
+        filter: sepia(30%) saturate(140%) hue-rotate(20deg) brightness(105%);
+    }
+    75% {
+        filter: sepia(10%) saturate(150%) hue-rotate(-15deg) brightness(110%);
+    }
+    100% {
+        filter: sepia(0%) saturate(130%) hue-rotate(-5deg) brightness(105%);
+    }
+}
+
+.about-img:hover .color-animate {
+    transform: scale(1.05);
+    animation-duration: 4s;
+    filter: sepia(0%) saturate(150%) hue-rotate(0deg) brightness(110%);
+}
+<div class="about-content">
+    <div class="about-img">
+        <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer" class="color-animate">
+    </div>
+</div>
                 </div>
                 <div class="about-text">
                     <h3>Freelance Web & Graphic Designer</h3>
@@ -1592,3 +1633,4 @@
     </script>
 </body>
 </html>
+

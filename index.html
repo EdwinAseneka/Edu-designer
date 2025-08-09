@@ -1264,8 +1264,30 @@
          
 <div class="about-content">
     <div class="about-img">
-        <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer" class="color-animate">
+        <img src="eduz1.jpg" alt="Edwin - Web & Graphic Designer" id="animated-photo">
     </div>
+</div>
+
+<script>
+    const photo = document.getElementById('animated-photo');
+    let counter = 0;
+    const effects = [
+        { filter: 'hue-rotate(0deg) contrast(1.1)' },
+        { filter: 'hue-rotate(45deg) saturate(1.3)' },
+        { filter: 'hue-rotate(90deg) brightness(1.1)' },
+        { filter: 'hue-rotate(135deg) sepia(0.2)' }
+    ];
+    
+    function cycleEffects() {
+        counter = (counter + 1) % effects.length;
+        photo.style.transition = 'filter 2s ease-in-out';
+        photo.style.filter = effects[counter].filter;
+        setTimeout(cycleEffects, 2000);
+    }
+    
+    photo.onload = cycleEffects;
+    if (photo.complete) photo.onload();
+</script>
      <div class="about-text">
                     <h3>Freelance Web & Graphic Designer</h3>
                     <p>We are freelance web and graphic designer passionate about helping businesses and brands stand out. We design clean websites, creative logos, and engaging visual content that works across all devices.</p>
@@ -1593,6 +1615,7 @@
     </script>
 </body>
 </html>
+
 
 
 

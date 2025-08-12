@@ -1208,15 +1208,44 @@
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav>
-<img 
-  src="web.png" 
-  alt="Web Design" 
-  style="width: 200px; height: auto; background-color: #f0f0f0; padding: 10px; border-radius: 5px; transition: 0.3s ease;"
-  onmouseover="this.style.transform='scale(1.05)'"
-  onmouseout="this.style.transform='scale(1)'"
->
-                <ul class="nav-links">
+<div class="img-container">
+  <img src="web.png" alt="Web Design" class="animated-img">
+</div>
+
+<style>
+  .img-container {
+    width: 120px;        /* Small rectangle width */
+    height: 80px;        /* Small rectangle height */
+    background: #800080; /* Purple background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;  /* Slightly rounded corners */
+    overflow: hidden;    /* Ensures image stays inside */
+    padding: 5px;       /* Spacing inside container */
+  }
+
+  .animated-img {
+    width: 100%;        /* Fits container width */
+    height: auto;       /* Keeps aspect ratio */
+    transition: transform 0.5s ease; /* Smooth animation */
+  }
+
+  /* Hover animation */
+  .animated-img:hover {
+    transform: scale(1.1) rotate(5deg); /* Zoom + slight tilt */
+  }
+
+  /* Optional: Pulsing animation (always active) */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .animated-img {
+    animation: pulse 2s infinite; /* Apply pulse animation */
+  }
+</style>                <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -1886,6 +1915,7 @@
     </script>
 </body>
 </html>
+
 
 
 

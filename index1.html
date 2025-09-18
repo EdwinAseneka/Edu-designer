@@ -7,16 +7,179 @@
     <title>Edwin | Web & Graphic Designer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Your existing CSS remains unchanged */
-        /* I'll only add new styles for the SEO Tools section */
-        
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        #header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #header .container {
+            padding: 15px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* SEO Tools Section Styles */
         #seo-tools {
             background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
             position: relative;
             overflow: hidden;
             color: #333;
-            padding: 80px 0;
+            padding: 100px 0;
+            margin-top: 70px;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
         .tools-tabs {
@@ -28,30 +191,34 @@
         }
         
         .tool-tab {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: white;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 2;
+            position: relative;
         }
         
         .tool-tab.active, .tool-tab:hover {
             background: var(--gradient);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
         
         .tool-content {
             display: none;
             background: white;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .tool-content.active {
@@ -66,11 +233,16 @@
         
         .tool-form {
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .tool-form input,
-        .tool-form textarea {
-            width: 100%;
+        .tool-form textarea,
+        .tool-form select {
+            flex: 1;
+            min-width: 250px;
             padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -81,8 +253,8 @@
         
         .tool-result {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 10px;
             margin-top: 20px;
             display: none;
         }
@@ -90,8 +262,8 @@
         .tool-metric {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
             border-bottom: 1px solid #eee;
         }
         
@@ -102,23 +274,23 @@
         
         .seo-score {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
             color: white;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         
         .score-value {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: bold;
             margin: 10px 0;
         }
         
         .progress-bar {
-            height: 10px;
+            height: 12px;
             background: #e9ecef;
-            border-radius: 5px;
+            border-radius: 6px;
             margin-bottom: 10px;
             overflow: hidden;
         }
@@ -126,7 +298,7 @@
         .progress-fill {
             height: 100%;
             background: var(--gradient);
-            border-radius: 5px;
+            border-radius: 6px;
             width: 0%;
             transition: width 1s ease;
         }
@@ -134,45 +306,138 @@
         .tool-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 25px;
+            margin-top: 35px;
         }
         
         .feature-card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
         .feature-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 15px;
         }
         
         .extension-card {
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
         .extension-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .extension-download {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            color: #e63946;
+            background: #ffccd5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .recommendations {
+            background: #e6f7ff;
+            padding: 20px;
+            border-radius: 8px;
             margin-top: 20px;
+        }
+
+        .recommendations h4 {
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+
+        .recommendations ul {
+            padding-left: 20px;
+        }
+
+        .recommendations li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .tool-form {
+                flex-direction: column;
+            }
+            
+            .extension-download {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -183,11 +448,8 @@
             <nav>
                 <a href="#" class="logo"><i class="fas fa-paint-brush logo-icon"></i>Ed<span>win</span></a>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#seo-tools">SEO Tools</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                   
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -196,15 +458,13 @@
         </div>
     </header>
 
-    <!-- Your existing sections (Home, About, Services, Contact) -->
-
-    <!-- New SEO Tools Section -->
+    <!-- SEO Tools Section -->
     <section id="seo-tools">
         <div class="particles" id="seo-particles"></div>
         <div class="container">
             <div class="section-title">
-                <h2>SEO Tools</h2>
-                <p>Free tools to help optimize your website's search engine performance</p>
+                <h2>Professional SEO Tools</h2>
+                <p>Advanced tools to analyze and improve your website's search engine performance</p>
             </div>
             
             <div class="tools-tabs">
@@ -219,12 +479,27 @@
             <!-- Keyword Research Tool -->
             <div class="tool-content active" id="keyword-tool">
                 <h3>Keyword Research Tool</h3>
-                <p>Discover valuable keywords to target for your website content.</p>
+                <p>Discover valuable keywords to target for your website content with detailed metrics.</p>
                 
                 <div class="tool-form">
                     <input type="text" id="keyword-input" placeholder="Enter a seed keyword (e.g., web design)">
+                    <select id="keyword-country">
+                          <option value="us">Kenya</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                        <option value="global">Global</option>
+                    </select>
                     <button class="btn" onclick="analyzeKeyword()"><i class="fas fa-search"></i> Analyze Keyword</button>
                 </div>
+                
+                <div class="loading" id="keyword-loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing keyword data...</p>
+                </div>
+                
+                <div class="error-message" id="keyword-error"></div>
                 
                 <div class="tool-result" id="keyword-result">
                     <h4>Keyword Analysis for: <span id="keyword-value"></span></h4>
@@ -235,22 +510,30 @@
                         <p>Competitive</p>
                     </div>
                     
+                    <h4>Keyword Metrics</h4>
+                    <div class="tool-metric">
+                        <span>Search Volume</span>
+                        <span class="metric-value" id="keyword-volume">1,200 searches/mo</span>
+                    </div>
+                    <div class="tool-metric">
+                        <span>CPC (Cost-Per-Click)</span>
+                        <span class="metric-value" id="keyword-cpc">$3.75</span>
+                    </div>
+                    <div class="tool-metric">
+                        <span>Competition</span>
+                        <span class="metric-value" id="keyword-competition">High</span>
+                    </div>
+                    
                     <h4>Keyword Suggestions</h4>
-                    <div class="tool-metric">
-                        <span>web design services</span>
-                        <span class="metric-value">1,200 searches/mo</span>
+                    <div id="keyword-suggestions">
+                        <!-- Will be populated by JavaScript -->
                     </div>
-                    <div class="tool-metric">
-                        <span>professional web design</span>
-                        <span class="metric-value">890 searches/mo</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>affordable web design</span>
-                        <span class="metric-value">750 searches/mo</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>web design company</span>
-                        <span class="metric-value">1,500 searches/mo</span>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-lightbulb"></i> Content Strategy Recommendations</h4>
+                        <ul id="keyword-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
                     </div>
                     
                     <div class="tool-features">
@@ -271,12 +554,19 @@
             <!-- On-Page SEO Tool -->
             <div class="tool-content" id="onpage-tool">
                 <h3>On-Page SEO Analysis</h3>
-                <p>Check how well optimized your webpage is for search engines.</p>
+                <p>Check how well optimized your webpage is for search engines with detailed recommendations.</p>
                 
                 <div class="tool-form">
-                    <input type="url" id="onpage-url" placeholder="Enter URL to analyze">
+                    <input type="url" id="onpage-url" placeholder="Enter URL to analyze (e.g., https://example.com)">
                     <button class="btn" onclick="analyzeOnPage()"><i class="fas fa-cog"></i> Analyze Page</button>
                 </div>
+                
+                <div class="loading" id="onpage-loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing page SEO factors...</p>
+                </div>
+                
+                <div class="error-message" id="onpage-error"></div>
                 
                 <div class="tool-result" id="onpage-result">
                     <h4>On-Page Analysis for: <span id="page-url">https://www.example.com</span></h4>
@@ -288,25 +578,15 @@
                     </div>
                     
                     <h4>Page Analysis</h4>
-                    <div class="tool-metric">
-                        <span>Meta Title</span>
-                        <span class="metric-value">✓ Good (58 characters)</span>
+                    <div id="onpage-metrics">
+                        <!-- Will be populated by JavaScript -->
                     </div>
-                    <div class="tool-metric">
-                        <span>Meta Description</span>
-                        <span class="metric-value">✓ Good (156 characters)</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Heading Structure</span>
-                        <span class="metric-value">✓ Good H1 found</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Image Alt Tags</span>
-                        <span class="metric-value">⚠️ 3 images missing alt text</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Content Length</span>
-                        <span class="metric-value">✓ Good (1,245 words)</span>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-wrench"></i> On-Page Optimization Recommendations</h4>
+                        <ul id="onpage-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
                     </div>
                     
                     <div class="tool-features">
@@ -324,6 +604,7 @@
                 </div>
             </div>
             
+            <!-- Additional tools would follow the same pattern -->
             <!-- Technical SEO Tool -->
             <div class="tool-content" id="technical-tool">
                 <h3>Technical SEO Audit</h3>
@@ -333,6 +614,13 @@
                     <input type="url" id="technical-url" placeholder="Enter website URL">
                     <button class="btn" onclick="analyzeTechnical()"><i class="fas fa-wrench"></i> Run Technical Audit</button>
                 </div>
+                
+                <div class="loading" id="technical-loading">
+                    <div class="spinner"></div>
+                    <p>Running technical audit...</p>
+                </div>
+                
+                <div class="error-message" id="technical-error"></div>
                 
                 <div class="tool-result" id="technical-result">
                     <h4>Technical SEO Analysis for: <span id="tech-url">https://www.example.com</span></h4>
@@ -344,29 +632,15 @@
                     </div>
                     
                     <h4>Technical Factors</h4>
-                    <div class="tool-metric">
-                        <span>Page Speed</span>
-                        <span class="metric-value">⚠️ 2.8s load time (needs improvement)</span>
+                    <div id="technical-metrics">
+                        <!-- Will be populated by JavaScript -->
                     </div>
-                    <div class="tool-metric">
-                        <span>Mobile Friendly</span>
-                        <span class="metric-value">✓ Responsive design</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>SSL Certificate</span>
-                        <span class="metric-value">✓ HTTPS enabled</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>XML Sitemap</span>
-                        <span class="metric-value">✓ Found</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Robots.txt</span>
-                        <span class="metric-value">✓ Found</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Structured Data</span>
-                        <span class="metric-value">⚠️ No schema markup found</span>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-tools"></i> Technical SEO Recommendations</h4>
+                        <ul id="technical-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
                     </div>
                     
                     <div class="tool-features">
@@ -394,6 +668,13 @@
                     <button class="btn" onclick="analyzeBacklinks()"><i class="fas fa-link"></i> Analyze Backlinks</button>
                 </div>
                 
+                <div class="loading" id="backlink-loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing backlink profile...</p>
+                </div>
+                
+                <div class="error-message" id="backlink-error"></div>
+                
                 <div class="tool-result" id="backlink-result">
                     <h4>Backlink Analysis for: <span id="backlink-site">https://www.example.com</span></h4>
                     
@@ -404,31 +685,20 @@
                     </div>
                     
                     <h4>Backlink Profile</h4>
-                    <div class="tool-metric">
-                        <span>Total Backlinks</span>
-                        <span class="metric-value">1,248</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Referring Domains</span>
-                        <span class="metric-value">86</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Spam Score</span>
-                        <span class="metric-value">3% (Low)</span>
+                    <div id="backlink-metrics">
+                        <!-- Will be populated by JavaScript -->
                     </div>
                     
                     <h4>Top Referring Domains</h4>
-                    <div class="tool-metric">
-                        <span>exampleblog.com</span>
-                        <span class="metric-value">DA 58 (15 links)</span>
+                    <div id="referring-domains">
+                        <!-- Will be populated by JavaScript -->
                     </div>
-                    <div class="tool-metric">
-                        <span>businessdirectory.org</span>
-                        <span class="metric-value">DA 42 (8 links)</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>technews.com</span>
-                        <span class="metric-value">DA 78 (5 links)</span>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-link"></i> Link Building Strategy</h4>
+                        <ul id="backlink-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
                     </div>
                     
                     <div class="tool-features">
@@ -456,6 +726,13 @@
                     <button class="btn" onclick="showAnalytics()"><i class="fas fa-chart-bar"></i> View Analytics</button>
                 </div>
                 
+                <div class="loading" id="analytics-loading">
+                    <div class="spinner"></div>
+                    <p>Gathering analytics data...</p>
+                </div>
+                
+                <div class="error-message" id="analytics-error"></div>
+                
                 <div class="tool-result" id="analytics-result">
                     <h4>Traffic Analytics for: <span id="analytics-site">https://www.example.com</span></h4>
                     
@@ -466,50 +743,20 @@
                     </div>
                     
                     <h4>Traffic Sources</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 45%"></div>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Organic Search</span>
-                        <span class="metric-value">45% (2,362 visits)</span>
-                    </div>
-                    
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 30%"></div>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Direct</span>
-                        <span class="metric-value">30% (1,574 visits)</span>
-                    </div>
-                    
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 15%"></div>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Social Media</span>
-                        <span class="metric-value">15% (787 visits)</span>
-                    </div>
-                    
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 10%"></div>
-                    </div>
-                    <div class="tool-metric">
-                        <span>Referral</span>
-                        <span class="metric-value">10% (525 visits)</span>
+                    <div id="traffic-sources">
+                        <!-- Will be populated by JavaScript -->
                     </div>
                     
                     <h4>Top Performing Pages</h4>
-                    <div class="tool-metric">
-                        <span>/services/web-design</span>
-                        <span class="metric-value">1,248 visits</span>
+                    <div id="top-pages">
+                        <!-- Will be populated by JavaScript -->
                     </div>
-                    <div class="tool-metric">
-                        <span>/blog/seo-tips</span>
-                        <span class="metric-value">987 visits</span>
-                    </div>
-                    <div class="tool-metric">
-                        <span>/portfolio</span>
-                        <span class="metric-value">754 visits</span>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-chart-line"></i> Growth Opportunities</h4>
+                        <ul id="analytics-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
                     </div>
                     
                     <div class="tool-features">
@@ -569,14 +816,12 @@
             </div>
             
             <div class="section-title" style="margin-top: 50px;">
-                <p>Need professional SEO services? <a href="#contact">Contact me</a> for a comprehensive SEO audit and strategy.</p>
+                <p>Need professional SEO services? <a href="#contact" style="color: var(--primary); text-decoration: none; font-weight: 600;">Contact me</a> for a comprehensive SEO audit and strategy.</p>
             </div>
         </div>
     </section>
 
-    <!-- Your existing footer and other sections -->
-
-    <!-- Additional JavaScript for SEO Tools -->
+    <!-- JavaScript for SEO Tools -->
     <script>
         // Tab functionality for SEO tools
         const toolTabs = document.querySelectorAll('.tool-tab');
@@ -599,58 +844,451 @@
                 });
             });
         });
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         
-        // Simulated analysis functions
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Validate URL function
+        function isValidUrl(url) {
+            try {
+                new URL(url);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Simulated analysis functions with more detailed data
         function analyzeKeyword() {
-            const keyword = document.getElementById('keyword-input').value || 'web design';
-            document.getElementById('keyword-value').textContent = keyword;
-            document.getElementById('keyword-result').style.display = 'block';
+            const keywordInput = document.getElementById('keyword-input');
+            const keyword = keywordInput.value.trim() || 'web design';
+            const country = document.getElementById('keyword-country').value;
+            const loadingElement = document.getElementById('keyword-loading');
+            const errorElement = document.getElementById('keyword-error');
+            const resultElement = document.getElementById('keyword-result');
             
-            // Animate score
-            animateValue('keyword-score', 0, 68, 1000);
+            // Basic validation
+            if (keyword.length < 2) {
+                errorElement.textContent = 'Please enter a keyword with at least 2 characters';
+                errorElement.style.display = 'block';
+                return;
+            }
+            
+            // Hide previous errors and show loading
+            errorElement.style.display = 'none';
+            loadingElement.style.display = 'block';
+            resultElement.style.display = 'none';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                loadingElement.style.display = 'none';
+                
+                // Update keyword value
+                document.getElementById('keyword-value').textContent = keyword;
+                
+                // Generate random but realistic metrics based on keyword
+                const volume = Math.floor(Math.random() * 5000) + 500;
+                const difficulty = Math.floor(Math.random() * 100);
+                const cpc = (Math.random() * 5 + 1).toFixed(2);
+                
+                document.getElementById('keyword-volume').textContent = `${volume.toLocaleString()} searches/mo`;
+                document.getElementById('keyword-cpc').textContent = `$${cpc}`;
+                document.getElementById('keyword-competition').textContent = 
+                    difficulty > 70 ? 'High' : difficulty > 40 ? 'Medium' : 'Low';
+                
+                // Animate score
+                animateValue('keyword-score', 0, difficulty, 1000);
+                
+                // Generate keyword suggestions
+                const suggestionsContainer = document.getElementById('keyword-suggestions');
+                suggestionsContainer.innerHTML = '';
+                
+                const relatedKeywords = [
+                    `${keyword} services`,
+                    `professional ${keyword}`,
+                    `affordable ${keyword}`,
+                    `${keyword} company`,
+                    `best ${keyword}`,
+                    `${keyword} near me`,
+                    `${keyword} tips`,
+                    `${keyword} tutorial`
+                ];
+                
+                relatedKeywords.forEach(related => {
+                    const volume = Math.floor(Math.random() * 3000) + 100;
+                    const difficulty = Math.floor(Math.random() * 100);
+                    
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${related}</span>
+                        <span class="metric-value">${volume.toLocaleString()} searches/mo | ${difficulty}% difficulty</span>
+                    `;
+                    suggestionsContainer.appendChild(metricDiv);
+                });
+                
+                // Generate recommendations
+                const recommendationsList = document.getElementById('keyword-recommendations');
+                recommendationsList.innerHTML = '';
+                
+                const recommendations = [
+                    `Target long-tail variations like "${keyword} for small businesses" to capture more specific intent`,
+                    `Create a comprehensive guide on ${keyword} to establish authority`,
+                    `Develop content around "${keyword} vs alternatives" to capture comparison traffic`,
+                    `Consider creating video content for "${keyword} tutorial" searches`
+                ];
+                
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    recommendationsList.appendChild(li);
+                });
+                
+                // Show results
+                resultElement.style.display = 'block';
+            }, 1500);
         }
         
         function analyzeOnPage() {
-            const url = document.getElementById('onpage-url').value || 'https://www.example.com';
-            document.getElementById('page-url').textContent = url;
-            document.getElementById('onpage-result').style.display = 'block';
+            const urlInput = document.getElementById('onpage-url');
+            const url = urlInput.value.trim() || 'https://www.example.com';
+            const loadingElement = document.getElementById('onpage-loading');
+            const errorElement = document.getElementById('onpage-error');
+            const resultElement = document.getElementById('onpage-result');
             
-            // Animate score
-            animateValue('onpage-score', 0, 82, 1000);
+            // Validate URL
+            if (!isValidUrl(url)) {
+                errorElement.textContent = 'Please enter a valid URL (e.g., https://example.com)';
+                errorElement.style.display = 'block';
+                return;
+            }
+            
+            // Hide previous errors and show loading
+            errorElement.style.display = 'none';
+            loadingElement.style.display = 'block';
+            resultElement.style.display = 'none';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                loadingElement.style.display = 'none';
+                
+                // Update URL
+                document.getElementById('page-url').textContent = url;
+                
+                // Generate random but realistic score
+                const score = Math.floor(Math.random() * 40) + 60;
+                
+                // Animate score
+                animateValue('onpage-score', 0, score, 1000);
+                
+                // Generate metrics
+                const metricsContainer = document.getElementById('onpage-metrics');
+                metricsContainer.innerHTML = '';
+                
+                const metrics = [
+                    { name: 'Meta Title', value: '✓ Good (58 characters)', status: 'good' },
+                    { name: 'Meta Description', value: '✓ Good (156 characters)', status: 'good' },
+                    { name: 'Heading Structure', value: '✓ Good H1 found', status: 'good' },
+                    { name: 'Image Alt Tags', value: '⚠️ 3 images missing alt text', status: 'warning' },
+                    { name: 'Content Length', value: '✓ Good (1,245 words)', status: 'good' },
+                    { name: 'Keyword Usage', value: '✓ Primary keyword found in content', status: 'good' },
+                    { name: 'Internal Links', value: '⚠️ Could use more internal links', status: 'warning' },
+                    { name: 'External Links', value: '✓ Appropriate outbound links', status: 'good' },
+                    { name: 'Mobile Responsiveness', value: '✓ Fully responsive', status: 'good' }
+                ];
+                
+                metrics.forEach(metric => {
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${metric.name}</span>
+                        <span class="metric-value">${metric.value}</span>
+                    `;
+                    metricsContainer.appendChild(metricDiv);
+                });
+                
+                // Generate recommendations
+                const recommendationsList = document.getElementById('onpage-recommendations');
+                recommendationsList.innerHTML = '';
+                
+                const recommendations = [
+                    'Add missing alt text to images for better accessibility and SEO',
+                    'Include more internal links to improve site structure and user engagement',
+                    'Consider adding schema markup to enhance search result appearances',
+                    'Optimize images to improve page loading speed'
+                ];
+                
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    recommendationsList.appendChild(li);
+                });
+                
+                // Show results
+                resultElement.style.display = 'block';
+            }, 2000);
         }
         
+        // Similar detailed implementations for other tools...
         function analyzeTechnical() {
-            const url = document.getElementById('technical-url').value || 'https://www.example.com';
-            document.getElementById('tech-url').textContent = url;
-            document.getElementById('technical-result').style.display = 'block';
+            const urlInput = document.getElementById('technical-url');
+            const url = urlInput.value.trim() || 'https://www.example.com';
+            const loadingElement = document.getElementById('technical-loading');
+            const errorElement = document.getElementById('technical-error');
+            const resultElement = document.getElementById('technical-result');
             
-            // Animate score
-            animateValue('technical-score', 0, 74, 1000);
+            if (!isValidUrl(url)) {
+                errorElement.textContent = 'Please enter a valid URL (e.g., https://example.com)';
+                errorElement.style.display = 'block';
+                return;
+            }
+            
+            errorElement.style.display = 'none';
+            loadingElement.style.display = 'block';
+            resultElement.style.display = 'none';
+            
+            setTimeout(() => {
+                loadingElement.style.display = 'none';
+                document.getElementById('tech-url').textContent = url;
+                
+                const score = Math.floor(Math.random() * 40) + 50;
+                animateValue('technical-score', 0, score, 1000);
+                
+                const metricsContainer = document.getElementById('technical-metrics');
+                metricsContainer.innerHTML = '';
+                
+                const metrics = [
+                    { name: 'Page Speed', value: '⚠️ 2.8s load time (needs improvement)', status: 'warning' },
+                    { name: 'Mobile Friendly', value: '✓ Responsive design', status: 'good' },
+                    { name: 'SSL Certificate', value: '✓ HTTPS enabled', status: 'good' },
+                    { name: 'XML Sitemap', value: '✓ Found', status: 'good' },
+                    { name: 'Robots.txt', value: '✓ Found', status: 'good' },
+                    { name: 'Structured Data', value: '⚠️ No schema markup found', status: 'warning' },
+                    { name: '404 Errors', value: '✓ No critical errors found', status: 'good' },
+                    { name: 'URL Structure', value: '✓ Clean URLs', status: 'good' },
+                    { name: 'Security Headers', value: '⚠️ Some headers missing', status: 'warning' }
+                ];
+                
+                metrics.forEach(metric => {
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${metric.name}</span>
+                        <span class="metric-value">${metric.value}</span>
+                    `;
+                    metricsContainer.appendChild(metricDiv);
+                });
+                
+                const recommendationsList = document.getElementById('technical-recommendations');
+                recommendationsList.innerHTML = '';
+                
+                const recommendations = [
+                    'Implement browser caching to improve loading times',
+                    'Minify CSS and JavaScript files',
+                    'Add schema markup to enhance search result appearances',
+                    'Implement security headers like X-Content-Type-Options and X-Frame-Options'
+                ];
+                
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    recommendationsList.appendChild(li);
+                });
+                
+                resultElement.style.display = 'block';
+            }, 2000);
         }
         
         function analyzeBacklinks() {
-            const url = document.getElementById('backlink-url').value || 'https://www.example.com';
-            document.getElementById('backlink-site').textContent = url;
-            document.getElementById('backlink-result').style.display = 'block';
+            const urlInput = document.getElementById('backlink-url');
+            const url = urlInput.value.trim() || 'https://www.example.com';
+            const loadingElement = document.getElementById('backlink-loading');
+            const errorElement = document.getElementById('backlink-error');
+            const resultElement = document.getElementById('backlink-result');
             
-            // Animate score
-            animateValue('da-score', 0, 42, 1000);
+            if (!isValidUrl(url)) {
+                errorElement.textContent = 'Please enter a valid URL (e.g., https://example.com)';
+                errorElement.style.display = 'block';
+                return;
+            }
+            
+            errorElement.style.display = 'none';
+            loadingElement.style.display = 'block';
+            resultElement.style.display = 'none';
+            
+            setTimeout(() => {
+                loadingElement.style.display = 'none';
+                document.getElementById('backlink-site').textContent = url;
+                
+                const score = Math.floor(Math.random() * 50) + 20;
+                animateValue('da-score', 0, score, 1000);
+                
+                const metricsContainer = document.getElementById('backlink-metrics');
+                metricsContainer.innerHTML = '';
+                
+                const metrics = [
+                    { name: 'Total Backlinks', value: '1,248' },
+                    { name: 'Referring Domains', value: '86' },
+                    { name: 'Spam Score', value: '3% (Low)' },
+                    { name: 'Topical Relevance', value: '85% (High)' },
+                    { name: 'Link Growth', value: '12% (Last 30 days)' }
+                ];
+                
+                metrics.forEach(metric => {
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${metric.name}</span>
+                        <span class="metric-value">${metric.value}</span>
+                    `;
+                    metricsContainer.appendChild(metricDiv);
+                });
+                
+                const domainsContainer = document.getElementById('referring-domains');
+                domainsContainer.innerHTML = '';
+                
+                const domains = [
+                    { name: 'exampleblog.com', value: 'DA 58 (15 links)' },
+                    { name: 'businessdirectory.org', value: 'DA 42 (8 links)' },
+                    { name: 'technews.com', value: 'DA 78 (5 links)' },
+                    { name: 'industryinsider.com', value: 'DA 65 (3 links)' }
+                ];
+                
+                domains.forEach(domain => {
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${domain.name}</span>
+                        <span class="metric-value">${domain.value}</span>
+                    `;
+                    domainsContainer.appendChild(metricDiv);
+                });
+                
+                const recommendationsList = document.getElementById('backlink-recommendations');
+                recommendationsList.innerHTML = '';
+                
+                const recommendations = [
+                    'Focus on earning links from high-authority websites in your niche',
+                    'Create shareable content like infographics or research studies',
+                    'Reach out to industry influencers for collaboration opportunities',
+                    'Monitor for toxic backlinks and disavow them when necessary'
+                ];
+                
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    recommendationsList.appendChild(li);
+                });
+                
+                resultElement.style.display = 'block';
+            }, 2500);
         }
         
         function showAnalytics() {
-            const url = document.getElementById('analytics-url').value || 'https://www.example.com';
-            document.getElementById('analytics-site').textContent = url;
-            document.getElementById('analytics-result').style.display = 'block';
+            const urlInput = document.getElementById('analytics-url');
+            const url = urlInput.value.trim() || 'https://www.example.com';
+            const loadingElement = document.getElementById('analytics-loading');
+            const errorElement = document.getElementById('analytics-error');
+            const resultElement = document.getElementById('analytics-result');
             
-            // Animate score
-            animateValue('visitor-count', 0, 5248, 1000);
+            if (!isValidUrl(url)) {
+                errorElement.textContent = 'Please enter a valid URL (e.g., https://example.com)';
+                errorElement.style.display = 'block';
+                return;
+            }
             
-            // Animate progress bars
+            errorElement.style.display = 'none';
+            loadingElement.style.display = 'block';
+            resultElement.style.display = 'none';
+            
             setTimeout(() => {
-                document.querySelectorAll('.progress-fill').forEach(bar => {
-                    bar.style.width = bar.style.width;
+                loadingElement.style.display = 'none';
+                document.getElementById('analytics-site').textContent = url;
+                
+                const visitors = Math.floor(Math.random() * 10000) + 2000;
+                animateValue('visitor-count', 0, visitors, 1000);
+                
+                const sourcesContainer = document.getElementById('traffic-sources');
+                sourcesContainer.innerHTML = '';
+                
+                const sources = [
+                    { name: 'Organic Search', value: '45%', width: '45%', visits: '2,362' },
+                    { name: 'Direct', value: '30%', width: '30%', visits: '1,574' },
+                    { name: 'Social Media', value: '15%', width: '15%', visits: '787' },
+                    { name: 'Referral', value: '10%', width: '10%', visits: '525' }
+                ];
+                
+                sources.forEach(source => {
+                    const progressBar = document.createElement('div');
+                    progressBar.className = 'progress-bar';
+                    
+                    const progressFill = document.createElement('div');
+                    progressFill.className = 'progress-fill';
+                    progressFill.style.width = source.width;
+                    
+                    progressBar.appendChild(progressFill);
+                    sourcesContainer.appendChild(progressBar);
+                    
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${source.name}</span>
+                        <span class="metric-value">${source.value} (${source.visits} visits)</span>
+                    `;
+                    sourcesContainer.appendChild(metricDiv);
                 });
-            }, 100);
+                
+                const pagesContainer = document.getElementById('top-pages');
+                pagesContainer.innerHTML = '';
+                
+                const pages = [
+                    { name: '/services/web-design', value: '1,248 visits' },
+                    { name: '/blog/seo-tips', value: '987 visits' },
+                    { name: '/portfolio', value: '754 visits' },
+                    { name: '/about', value: '632 visits' },
+                    { name: '/contact', value: '521 visits' }
+                ];
+                
+                pages.forEach(page => {
+                    const metricDiv = document.createElement('div');
+                    metricDiv.className = 'tool-metric';
+                    metricDiv.innerHTML = `
+                        <span>${page.name}</span>
+                        <span class="metric-value">${page.value}</span>
+                    `;
+                    pagesContainer.appendChild(metricDiv);
+                });
+                
+                const recommendationsList = document.getElementById('analytics-recommendations');
+                recommendationsList.innerHTML = '';
+                
+                const recommendations = [
+                    'Optimize underperforming pages with better content and internal linking',
+                    'Increase social media promotion for top-performing content',
+                    'Create more content similar to your highest-traffic pages',
+                    'Improve conversion rates on high-traffic landing pages'
+                ];
+                
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec;
+                    recommendationsList.appendChild(li);
+                });
+                
+                // Animate progress bars
+                setTimeout(() => {
+                    document.querySelectorAll('.progress-fill').forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }, 100);
+                
+                resultElement.style.display = 'block';
+            }, 2000);
         }
         
         // Utility function to animate values
@@ -669,7 +1307,41 @@
         }
         
         // Create particles for SEO section
-        createParticles('seo-particles', 15);
+        function createParticles(containerId, count) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = 'rgba(67, 97, 238, 0.3)';
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 10 + 10}s infinite ease-in-out`;
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+            
+            // Add the keyframes for floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+                    25% { transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(5deg); }
+                    50% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) rotate(-5deg); }
+                    75% { transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(2deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Initialize particles when the page loads
+        window.addEventListener('load', () => {
+            createParticles('seo-particles', 20);
+        });
     </script>
 </body>
 </html>
